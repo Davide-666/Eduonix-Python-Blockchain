@@ -5,8 +5,7 @@ from wallet import Wallet
 from blockchain import Blockchain
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/', methods=['GET'])
 def get_node_ui():
